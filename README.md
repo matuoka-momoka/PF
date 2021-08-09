@@ -27,3 +27,5 @@ https://docs.google.com/spreadsheets/d/1FVoCSjIJFCPjaHqOcml1UXifxETIAKtW4XYnguY2
 - JSライブラリ：jQuery
 - IDE：Cloud9
 
+##　外部サイト
+- ロゴ作成　https://www.canva.com/design/DAEmmQoAMQ0/share/preview?token=JPWCHdNqbJu8lv30KrSMtw&role=EDITOR&utm_content=DAEmmQoAMQ0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
