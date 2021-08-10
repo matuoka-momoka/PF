@@ -1,0 +1,10 @@
+<div class='row'>
+	<div class='col-md-6 col-md-offset-3'>
+		<h1>mansore</h1>
+  	<%= render 'layouts/errors', obj: @mensore %>
+		<%= render 'form', mensore: @mensore %>
+		<%= link_to 'Show', mensore_path(@mensore), class: "mensore_#{@mensore.id}" %> |
+		<%= link_to 'Back', mensore_path, class: "back" %>
+    </div>
+    <div class='col-md-3'></div>
+</div>

@@ -1,0 +1,15 @@
+<% mensore.mensore_comments.each do |mensore_comment| %>
+  <% mensore_comment_user = mensore_comment.user %>
+  <tr>
+  	<td>
+  		<%= link_to user_path(,mensore_comment_user), class: "user_#{mensore_comment_user.id}" do %>
+    		<%= attachment_image_tag mensore_comment_user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg", size: "50x50" %><br>
+    		<%= mensore_comment_user.name %>
+  		<% end %>
+  	</td>
+  	<td><%= mensore_comment.comment %></td>
+  	<% if current_user == mensore_comment_user %>
+    	<td><%= link_to 'Destroy', mensore_mensore_comment_path(mensore_comment.mensore_id, mensore_comment.id), class: 'btn-sm btn-danger', method: :delete, remote: true %></td>
+  	<% end %>
+  </tr>
+<% end %>

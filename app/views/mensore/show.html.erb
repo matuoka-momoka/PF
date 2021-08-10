@@ -1,0 +1,40 @@
+<div class='row'>
+  <div class='col-xs-3'>
+    <h2>User info</h2>
+    <%= render 'users/info', user: @mensore.user %>
+    <h2>New kiji</h2>
+    <%= render 'form', mensore: Mensore.new %>
+  </div>
+
+
+  <div class='col-xs-9'>
+		<h2>mensore detail</h2>
+		<table class='table'>
+		  <tr id="mensore_<%= @mensore.id %>">
+        <td>
+          <%= link_to user_path(@mensore.user) do %>
+            <%= attachment_image_tag(@mensore.user, :profile_image, :fill, 100, 100, fallback: "no-image-icon.jpg") %><br>
+            <%= @mensore.user.name %>
+          <% end %>
+        </td>
+        <td><%= link_to @mensore.title, mensore_path(@mensore) %></td>
+        <td><%= @mensore.body %></td>
+        <td class="bookmarksbtn"><%= render "bookmarks/bookmarks-btn", mensore: @mensore %></td>
+        <td class="comments-count">コメント数: <%= @mensore.mensore_comments.count %></td>
+
+        <% if @mensore.user == current_user %>
+          <td><%= link_to 'Edit', edit_mensore_path(@mensore), class: "btn-sm btn-success edit_mensore_#{@mensore.id}" %></td>
+          <td><%= link_to 'Destroy', mensore_path(@mensore), method: :delete, data: { confirm: '消す？' }, class: "btn-sm btn-danger destroy_mensore_#{@mensore.id}"%></td>
+        <% end %>
+      </tr>
+    </table>
+    <table class="mensore_comments">
+      <%= render 'mensore_comment/index', mensore: @mensore %>
+    </table>
+    <%= form_with model:[@mensore,@mensore_comment] do |f| %>
+      <%= f.text_area :comment, size:"90x5" %>
+      <%= f.submit '送信'%>
+    <% end %>
+
+  </div>
+</div>

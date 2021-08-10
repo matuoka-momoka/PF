@@ -1,0 +1,16 @@
+<div class='row'>
+
+  <div class='col-xs-3'>
+    <h2>User info</h2>
+    <%= render 'users/info', user: @user %>
+
+    <h2>New</h2>
+    <%= render 'mensore/form', mensore: @mensore %>
+
+  </div>
+
+  <div class='col-xs-9'>
+    <h2>Mensore</h2>
+    <%= render 'mensore/index', mensores: @mensores %>
+  </div>
+</div>
