@@ -1,15 +1,14 @@
 class MensoresController < ApplicationController
-  before_action :authenticate_user!
-  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
+  #before_action :authenticate_user!
+  #before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def show
     @mensore = Mensore.find(params[:id])
     @mensore_comment = MensoreComment.new
-    render "hoges/hige"
+    @bookmark = @mensore.bookmarks.find_by(user_id: current_user.id)
+    #render "hoges/hige"
   end
   
-  
-
   def index
     @mensores = Mensore.all
     @mensore = Mensore.new
@@ -19,7 +18,7 @@ class MensoresController < ApplicationController
     @mensore = Mensore.new(mensore_params)
     @mensore.user_id = current_user.id
     if @mensore.save
-      redirect_to mensore_path(@mensore), notice: "できた〜."
+      redirect_to mensore_path(@mensore)
     else
       @mensores = Mensore.all
       render 'index'
@@ -27,6 +26,7 @@ class MensoresController < ApplicationController
   end
 
   def edit
+    @mensore = Mensore.find(params[:id])
   end
 
   def update
@@ -38,6 +38,7 @@ class MensoresController < ApplicationController
   end
 
   def destroy
+    @mensore = Mesore.find(params[:id])
     @mensore.destroy
     redirect_to mensore_path
   end
@@ -45,7 +46,7 @@ class MensoresController < ApplicationController
   private
 
   def mensore_params
-    params.require(:mensore).permit(:title, :body)
+    params.require(:mensore).permit(:title, :body,:image,:star)
   end
 
   def ensure_correct_user

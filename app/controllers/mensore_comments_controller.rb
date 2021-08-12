@@ -1,4 +1,4 @@
-class MensoresCommentsController < ApplicationController
+class MensoreCommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create

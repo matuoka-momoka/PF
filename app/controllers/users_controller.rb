@@ -6,6 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @mensores = @user.mensores
     @mensore = Mensore.new
+    #@ticket = ticket.new
   end
 
   def index

@@ -6,9 +6,28 @@ class User < ApplicationRecord
 
   has_many :mensores
   has_many :bookmarks, dependent: :destroy
+  def already_bookmarkd?(mensore)
+    self.bookmarks.exists?(mensore_id: mensore.id)
+  end
   has_many :mensore_comments, dependent: :destroy
-  attachment :profile_image, destroy: false
+  attachment :profile_image
+
+  
 
   validates :name, length: { minimum: 2, maximum: 20 }, uniqueness: true
   validates :introduction, length: { maximum: 50 }
+  
+  def self.search(search,word)
+    if search == "forward_match"
+      @user = User.where("name LIKE?","#{word}%")
+    elsif search == "backward_match"
+     @user = User.where("name LIKE?","%#{word}")
+    elsif search == "perfect_match"
+      @user = User.where(name: "#{word}")
+    elsif search == "partial_match"
+      @user = User.where("name LIKE?","%#{word}%")
+    else
+     @user = User.all
+    end
+  end
 end

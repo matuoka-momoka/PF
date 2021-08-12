@@ -18,7 +18,7 @@
         </td>
         <td><%= link_to mensore.title, mensore_path(mensore), class: "mensore_#{mensore.id}" %></td>
         <td><%= mensore.body %></td>
-        <td class="bookmark-btn"><%= render "bookmark/bookmark-btn", mensore: mensore %></td>
+        <td class="bookmark-btn"><%= render "bookmarks/bookmark-btn", mensore: mensore %></td>
         <td class="comments-count">コメント数: <%= mensore.mensore_comments.count %></td>
       </tr>
     <% end %>
