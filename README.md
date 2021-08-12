@@ -36,5 +36,5 @@ https://docs.google.com/spreadsheets/d/1FVoCSjIJFCPjaHqOcml1UXifxETIAKtW4XYnguY2
 ## 外部サイト
 - ロゴ作成　https://www.canva.com/design/DAEmmQoAMQ0/share/preview?token=JPWCHdNqbJu8lv30KrSMtw&role=EDITOR&utm_content=DAEmmQoAMQ0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 - 評価機能の画像　https://github.com/wbotelhos/raty/tree/master/lib/images
-
+!
 
