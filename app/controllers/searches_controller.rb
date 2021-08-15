@@ -1,4 +1,4 @@
-class SeachController < ApplicationController
+class SeachesController < ApplicationController
     def search
       @model = params["search"]["model"]#選択したmodelを@modelに代入
       @value = params["search"]["value"] #検索にかけた文字列(ここではvalue)を@valueに代入

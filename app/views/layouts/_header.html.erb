@@ -9,7 +9,7 @@
           <li><%= link_to ' login', new_user_session_path, class: 'glyphicon glyphicon-log-in sign_in'%></li>
           <li><%= link_to ' logout', destroy_user_session_path, method: :delete, class: 'glyphicon glyphicon-log-out logout' %></li>
           <% if user_signed_in? %>
-            <%= form_with url: seach_new_path, method: :get, local: true do |f| %>
+            <%= form_with url:  search_path, method: :get, local: true do |f| %>
             <%= f.text_field 'search[value]' %>
             <%= f.select 'search[model]', options_for_select({ "User" => "user", "Mensore" => "mensore" }) %>
             <%= f.select 'search[how]', options_for_select({ "完全一致" => "match",  "部分一致" => "partical"  }) %>

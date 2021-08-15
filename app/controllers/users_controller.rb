@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @mensores = @user.mensores
     @mensore = Mensore.new
     #@ticket = ticket.new
+    
   end
 
   def index
@@ -22,6 +23,14 @@ class UsersController < ApplicationController
       redirect_to user_path(@user), notice: "変更できたー."
     else
       render "edit"
+    end
+  end
+  
+  def update
+    if @user.update(user_params)
+      redirect_to root_path
+    else
+      render :edit
     end
   end
 

@@ -12,6 +12,7 @@ class MensoresController < ApplicationController
   def index
     @mensores = Mensore.all
     @mensore = Mensore.new
+  @all_ranks = Mesnore.create_all_ranks
   end
 
   def create

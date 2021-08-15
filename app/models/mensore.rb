@@ -27,5 +27,5 @@ class Mensore < ApplicationRecord
      @mensore = Mensore.all
     end
   end
-
+  
 end
