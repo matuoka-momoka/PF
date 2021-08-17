@@ -1,13 +1,33 @@
-class SeachesController < ApplicationController
+class SearchesController < ApplicationController
     def search
-      @model = params["search"]["model"]#選択したmodelを@modelに代入
-      @value = params["search"]["value"] #検索にかけた文字列(ここではvalue)を@valueに代入
-      @how = params["search"]["how"]  #選択した検索方法howを@howに代入
-      @datas = search_for(@how, @model, @value) #search_forの引数にインスタンス変数を定義
+      
+      word = params[:search]
+      @search_results = Mensore.where('title LIKE ? OR body LIKE ?', "%#{word}%", "%#{word}%")
+      #binding.irb
+      
+      # @model = params["search"]["model"]#選択したmodelを@modelに代入
+      # binding.irb
+      
+      # params[:value]
+      # if params[:model] #がuserだったら
+      #   if params[:how] #が完全一致なら、
+      #      user.where(like '')
+      #    else
+      #       user.where(like '') #部分一致
+      #    end
+         
+      # else
+      #     mensore
+      # end
+
+      #@value = params["search"]["value"] #検索にかけた文字列(ここではvalue)を@valueに代入
+      # @how = params["search"]["how"]  #選択した検索方法howを@howに代入
+      # @datas = search_for(@how, @model, @value) #search_forの引数にインスタンス変数を定義
 
       # redirect_to search_path
 
-    end#@datasに最終的な検索結果が入ります
+    end
+    #@datasに最終的な検索結果が入ります
 
     private
 

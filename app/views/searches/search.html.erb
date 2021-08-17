@@ -1,32 +1,5 @@
 <div class="container">
-  <div class="col-xs-12">
-    <% if @model == "user" %>
-    <h2>Users search for '<%= @value %>'</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Introduction</th>
-            </tr>
-        </thead>
-    <% @datas.each do |user| %>
-        <tbody>
-            <tr>
-                <th>
-                    <%= attachment_image_tag(user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
-                </th>
-                <th>
-                    <%= user.name %>
-                </th>
-                <th>
-                    <%= user.introduction %>
-                </th>
-            </tr>
-        </tbody>
-    <% end %>
-    <% elsif @model == "mensore" %>
-    <h2>Mensores search for '<%= @value %>'</h2>
+    <h2><%= params[:search] %></h2>
     <table class="table">
         <thead>
             <tr>
@@ -35,22 +8,20 @@
                 <th>Opinion</th>
             </tr>
         </thead>
-        <% @datas.each do |mensore| %>
         <tbody>
+            <% @search_results.each do |search_result| %>
             <tr>
-                <th>
-                    <%= attachment_image_tag(mensore.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
-                </th>
-                <th>
-                    <%= mensore.title %>
-                </th>
-                <th>
-                    <%= mensore.body %>
-                </th>
+                <td>
+                    <%= attachment_image_tag(search_result.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                </td>
+                <td>
+                    <%= search_result.title %>
+                </td>
+                <td>
+                    <%= search_result.body %>
+                </td>
             </tr>
+            <% end %>
         </tbody>
-        <% end %>
-    <% end %>
     </table>
-  </div>
 </div>

@@ -7,6 +7,7 @@ class MensoresController < ApplicationController
     @mensore_comment = MensoreComment.new
     @bookmark = @mensore.bookmarks.find_by(user_id: current_user.id)
     #render "hoges/hige"
+    @user = User.find(current_user.id)
   end
   
   def index

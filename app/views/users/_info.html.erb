@@ -16,6 +16,7 @@
 	  <th>followers</th>
 	  <th><%= user.followers.count %></th>
   </tr>
+   <th><%= render "relationships/follow_button", user: @user %></th>
 </table>
 </table>
 

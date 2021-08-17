@@ -9,23 +9,9 @@ class Mensore < ApplicationRecord
     bookmarks.where(user_id: user.id).exists?
   end
   
-  def self.search(search)
+    def self.search(search)
       return Mensore.all unless search
       Mensore.where(['content LIKE ?', "%#{search}%"])
-  end
-
-  def self.search(search,word)
-    if search == "forward_match"
-      @mensore = Mesnore.where("name LIKE?","#{word}%")
-    elsif search == "backward_match"
-     @mensore = Mensore.where("name LIKE?","%#{word}")
-    elsif search == "perfect_match"
-      @mensore = Mesnore.where(title: "#{word}")
-    elsif search == "partial_match"
-      @mensore = Mensoew.where("name LIKE?","%#{word}%")
-    else
-     @mensore = Mensore.all
     end
-  end
   
 end
