@@ -32,6 +32,7 @@ class MensoresController < ApplicationController
   end
 
   def update
+    @mensore = Mensore.find(params[:id])
     if @mensore.update(mensore_params)
       redirect_to mensore_path(@mensore), notice: "できたよー."
     else
@@ -40,11 +41,11 @@ class MensoresController < ApplicationController
   end
 
   def destroy
-    @mensore = Mesore.find(params[:id])
+    @mensore = Mensore.find(params[:id])
     @mensore.destroy
-    redirect_to mensore_path
+    redirect_to user_path(current_user)
   end
-
+  
   private
 
   def mensore_params

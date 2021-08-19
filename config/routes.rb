@@ -6,12 +6,14 @@ Rails.application.routes.draw do
  delete "mensores/:id/bookmarks"=> "bookmarks#destroy", as: "bookmarks"
   post "mensores/:id/bookmarks"=> "bookmarks#create", as: "bookmark"
   resources :mensores, only: [:index, :show, :edit, :create, :destroy, :update] do
- 
- 
   resources :mensore_comments, only: [:create, :destroy]
   end
   resources :users, only: [:index, :show, :edit, :update]
   resources :relationships, only: [:create, :destroy]
+  
+  get  'inquiry' => 'inquiry#index'              
+  post 'inquiry/confirm' => 'inquiry#confirm'   
+  post 'inquiry/thanks' => 'inquiry#thanks'
 end
 
 

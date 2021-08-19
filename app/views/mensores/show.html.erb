@@ -55,7 +55,8 @@
         <!--/星評価-->
 
         <% if @mensore.user == current_user %>
-          <td><%= link_to 'Edit', edit_mensore_path(@mensore), class: "btn-sm btn-success edit_mensore_#{@mensore.id}" %></td>
+          <td><%= link_to 'Edit', edit_mensore_path(@mensore), class: "btn-sm bg-light edit_mensore_#{@mensore.id}" %></td>
+          <td><%= link_to 'Destroy', mensore_path(@mensore), method: :delete, data: { confirm: '本当に消しますか？' }, class: "btn btn-sm bg-light destroy_mensore_#{@mensore.id}"%></td>
         <% end %>
       </tr>
     </table>
