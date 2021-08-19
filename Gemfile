@@ -71,3 +71,4 @@ gem 'jquery-rails'
 gem 'ransack'
 gem 'carrierwave'
 gem "dotenv-rails"
+

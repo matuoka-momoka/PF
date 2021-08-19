@@ -9,18 +9,19 @@
   </thead>
 
   <tbody>
-    <% mensores.each do |mensore| %>
-      <tr id="mensore_<%= mensore.id %>">
-        <td>
-          <%= link_to user_path(mensore.user) do %>
-            <%= attachment_image_tag(mensore.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
-          <% end %>
-        </td>
-        <td><%= link_to mensore.title, mensore_path(mensore), class: "mensore_#{mensore.id}" %></td>
-        <td><%= mensore.body %></td>
-        <td class="bookmark-btn"><%= render "bookmarks/bookmark-btn", mensore: mensore %></td>
-        <td class="comments-count">コメント数: <%= mensore.mensore_comments.count %></td>
-      </tr>
-    <% end %>
+      <% mensores.each do |mensore| %>
+        <tr>
+          <td>
+            <%= link_to user_path(mensore.user) do %>
+              <%= attachment_image_tag(mensore.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+            <% end %>
+          </td>
+          <td><%= link_to mensore.title, mensore_path(mensore), class: "mensore_#{mensore.id}" %></td>
+          <td><%= mensore.body %></td>
+  
+          <td id="mensore_<%= mensore.id %>"><%= render "bookmarks/bookmark-btn", mensore: mensore%></td>
+          <td class="comments-count">コメント数: <%= mensore.mensore_comments.count %></td>
+        </tr>
+      <% end %>
   </tbody>
 </table>

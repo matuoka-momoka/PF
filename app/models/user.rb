@@ -3,9 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
   has_many :mensores
   has_many :bookmarks, dependent: :destroy
+  has_many :bookmarkd_menspres, through: :bookmarks, source: :mensore
   def already_bookmarkd?(mensore)
     self.bookmarks.exists?(mensore_id: mensore.id)
   end

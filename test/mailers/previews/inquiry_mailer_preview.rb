@@ -11,7 +11,7 @@ end
     mail(
       from: 'system@example.com',
 #----------変更点--------------
-      to:   'ckckxellex@gmail.com',
+      to:   'portfolio0801@gmail.com',
 #----------変更点ここまで---------
       subject: 'お問い合わせ通知'
     )

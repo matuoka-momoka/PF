@@ -29,8 +29,23 @@ header{
 
 .body{
 	margin-top:51px;
+	background-color:#b0c4de;
 }
 
 header .navbar-left span {
 	display:inline-block;
+}
+
+#box{
+  height: 600px;
+}
+.image1 {
+  background-image: url(image1.jpg);
+}
+.image2 {
+  background-image: url(image2.jpg);
+}
+.image3 {
+  background-image: url(image3.jpg);
+
 }

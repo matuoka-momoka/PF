@@ -3,9 +3,11 @@ Rails.application.routes.draw do
  get '/search' => 'searches#search'
   root :to => "homes#top"
   get "home/about" => "homes#about"
-
+ delete "mensores/:id/bookmarks"=> "bookmarks#destroy", as: "bookmarks"
+  post "mensores/:id/bookmarks"=> "bookmarks#create", as: "bookmark"
   resources :mensores, only: [:index, :show, :edit, :create, :destroy, :update] do
-  resources :bookmarks, only: [:create, :destroy]
+ 
+ 
   resources :mensore_comments, only: [:create, :destroy]
   end
   resources :users, only: [:index, :show, :edit, :update]

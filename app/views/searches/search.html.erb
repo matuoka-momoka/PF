@@ -9,16 +9,23 @@
             </tr>
         </thead>
         <tbody>
-            <% @search_results.each do |search_result| %>
+         <% @mensore_ranks.each do |rank| %>
             <tr>
                 <td>
-                    <%= attachment_image_tag(search_result.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
+                    <%= attachment_image_tag(rank.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg", size:'40x40') %>
                 </td>
                 <td>
-                    <%= search_result.title %>
+                    <%= rank.title %>
                 </td>
                 <td>
-                    <%= search_result.body %>
+                    <%= rank.body %>
+                </td>
+                <td>
+                <%= rank.bookmarks.count %>
+                </td>
+                <td>
+                <%#= rank.id %>
+                 <%#= link_to '詳しく', mensore_path %>
                 </td>
             </tr>
             <% end %>
