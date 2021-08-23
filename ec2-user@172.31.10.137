@@ -1,0 +1,7 @@
+KEY='19961004Mm' #使用したいキーやパスワードを記述
+SECRET_KEY='19961004Mm'
+
+DB_USERNAME="rds-mysql-server" #RDSの接続ユーザ名
+DB_PASSWORD="19961004Mm" #RDSのパスワード
+DB_HOST="rds-mysql-server.ciec1vhxh0v2.us-east-1.rds.amazonaws.com" #RDSのエンドポイント名
+DB_DATABASE="menso-re" #アプリケーション名

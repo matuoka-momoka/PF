@@ -1,16 +1,15 @@
-
-<%= render 'layouts/errors', obj: @mensore %>
-
 <div class='row'>
   <div class='col-xs-3'>
+<%= render 'layouts/errors', obj: @mensore %>
+
+
     <h2>User info</h2>
     <%= render 'users/info', user: current_user %>
 
     <h2>New</h2>
     <%= render 'form', mensore: @mensore %>
-  </div>
 
-  <div class='col-xs-9'>
+
     
     <h2>mensore</h2>
 
