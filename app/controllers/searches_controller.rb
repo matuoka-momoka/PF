@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
     def search
-      
+     #@search = Mensore.find(params[:id])
       word = params[:search]
       #@search_results = Mensore.where('title LIKE ? OR body LIKE ?', "%#{word}%", "%#{word}%")
       @mensore_ranks = Mensore.where('title LIKE ? OR body LIKE ?', "%#{word}%", "%#{word}%").includes(:bookmarkd_users).sort {|a,b| b.bookmarkd_users.size <=> a.bookmarkd_users.size}
@@ -10,9 +10,9 @@ class SearchesController < ApplicationController
 
     private
 
-    def match(model, value)#def search_forでhowがmatchだった場合の処理
-      if model == 'user' #modelがuserの場合の処理
-        User.where(name: value) #whereでvalueと完全一致するnameを探します
+    def match(model, value)
+      if model == 'user' 
+        User.where(name: value) 
       elsif model == 'mensore'
         Mensore.where(title: value)
       end

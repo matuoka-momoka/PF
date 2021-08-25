@@ -1,7 +1,6 @@
 <% provide :title, 'お問い合わせ' %>
-<div class="container mt-4">
+<div class="container mt-3">
   <div class="row">
-    <div class="col-md-12 col-lg-6 offset-lg-3">
       <h2><%= icon('fas', 'envelope') %> お問い合わせ</h2>
       <nav aria-label="問い合わせ" class="small">
         <ol class="breadcrumb">
@@ -43,11 +42,9 @@
           <%= form.text_area :content, id: 'content', class: 'form-control', :placeholder => 'お問い合わせ内容', :rows => '5' %>
         </div>
 
-        <div class="float-right">
-          <%= form.submit "確認", class: "btn btn-dark" %>
-        </div>
+ 
+      <%= form.submit "確認", class: "btn btn-dark" %>
       <% end %>
 
     </div>
   </div>
-</div>

@@ -6,8 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @mensores = @user.mensores
     @mensore = Mensore.new
-    #@ticket = ticket.new
-    
+
   end
 
   def index
@@ -34,7 +33,10 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
+  def bookmarks
+    bookmarks = Bookmark.where(user_id: @user.id).pluck(:mensore_id)
+    @bookmarks_mensores = Mensore.find(bookmarks)
+  end
   private
 
   def user_params

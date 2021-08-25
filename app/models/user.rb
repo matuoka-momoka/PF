@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :mensores ,dependent: :destroy
   has_many :bookmarks, dependent: :destroy
+  has_many :bookmark_boards, through: :bookmarks, source: :board
   has_many :bookmarkd_menspres, through: :bookmarks, source: :mensore
   def already_bookmarkd?(mensore)
     self.bookmarks.exists?(mensore_id: mensore.id)

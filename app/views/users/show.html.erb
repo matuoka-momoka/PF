@@ -1,18 +1,12 @@
 <div class='row'>
-
   <div class='col-xs-3'>
-    <h2>User info</h2>
+    <h2>profile</h2>
     <%= render 'users/info', user: @user %>
-
     <h2>New</h2>
     <%= render 'mensores/form', mensore: @mensore %>
-    
-    
   </div>
-
   <div class='col-xs-6'>
     <h2>投稿一覧</h2>
- 
      <%= render 'mensores/index', mensores: @mensores %>
   </div>
 </div>

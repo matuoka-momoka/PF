@@ -1,0 +1,34 @@
+<div class='row'>
+  <div class='col-xs-6'>
+
+    
+    <h2>ブックマーク一覧</h2>
+<table class='table table-hover table-inverse'>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @bookmarks.each do |bookmark| %>
+        <tr>
+          <td>
+            <%= link_to user_path(bookmark.mensore.user) do %>
+              <%= attachment_image_tag(bookmark.mensore.user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
+            <% end %>
+          </td>
+          <td><%= link_to bookmark.mensore.title, mensore_path(bookmark.mensore), class: "mensore_#{bookmark.mensore.id}" %></td>
+          <td><%= bookmark.mensore.body %></td>
+  
+          <td id="mensore_<%= bookmark.mensore.id %>"><%= render "bookmarks/bookmark-btn", mensore: bookmark.mensore%></td>
+          <td class="comments-count">コメント数: <%= bookmark.mensore.mensore_comments.count %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+  </div>
+</div>

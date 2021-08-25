@@ -14,5 +14,11 @@ class BookmarksController < ApplicationController
     bookmark.destroy
   end
   
+  def index
+    @user = User.find(params[:user_id])
+    @bookmarks = @user.bookmarks
+    @mensore = Mensore.new
+  end
+    
   
 end

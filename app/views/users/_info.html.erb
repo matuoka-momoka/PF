@@ -1,25 +1,32 @@
-<table class='table'>
-  <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= user.name %></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th><%= user.introduction %></th>
-  </tr>
-  <tr>
-  	<th>follows</th>
-	  <th><%= user.followings.count %></th>
-  </tr>
-  <tr>
-	  <th>followers</th>
-	  <th><%= user.followers.count %></th>
-  </tr>
-   <th><%= render "relationships/follow_button", user: @user %></th>
-</table>
-</table>
-
 <div class='row'>
-  <%= link_to '', edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{user.id}" %>
+  <div class='col-xs-8'>
+      <table class='table'>
+    <tr><%= attachment_image_tag(user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg") %></tr>
+    <tr>
+  	  <th>名前</th>
+  	  <th><%= user.name %></th>
+    </tr>
+    <tr>
+  	  <th>一言</th>
+  	  <th><%= user.introduction %></th>
+    </tr>
+    <tr>
+    	<th>follows</th>
+  	  <th><%= user.followings.count %></th>
+    </tr>
+    <tr>
+  	  <th>followers</th>
+  	  <th><%= user.followers.count %></th>
+    </tr>
+     <%= render "relationships/follow_button", user: @user %>
+     <tr>
+  	  <th><%= link_to "ブックマーク一覧", user_bookmarks_path(@user) %></th>
+  	  <%#= link_to "サービス概要", root_path(anchor: "service"), class: "nav-item nav-link" %>
+
+    </tr>
+  </table>
+  <div class='row'>
+    <%= link_to '', edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{user.id}" %>
+  </div>
+ </div>
 </div>

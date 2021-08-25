@@ -24,8 +24,7 @@
                 <%= rank.bookmarks.count %>
                 </td>
                 <td>
-                <%#= rank.id %>
-                 <%#= link_to '詳しく', mensore_path %>
+                <%= link_to '詳しく', mensore_path(rank), class: "mensore_#{rank.id}" %>
                 </td>
             </tr>
             <% end %>
