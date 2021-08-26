@@ -20,13 +20,11 @@
     </tr>
      <%= render "relationships/follow_button", user: @user %>
      <tr>
-  	  <th><%= link_to "ブックマーク一覧", user_bookmarks_path(@user) %></th>
-  	  <%#= link_to "サービス概要", root_path(anchor: "service"), class: "nav-item nav-link" %>
-
+  	  <th><%= link_to "行きたいリスト", user_bookmarks_path(@user) %></th>
     </tr>
   </table>
-  <div class='row'>
+
     <%= link_to '', edit_user_path(user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{user.id}" %>
-  </div>
+
  </div>
 </div>

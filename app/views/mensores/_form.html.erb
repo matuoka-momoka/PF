@@ -1,13 +1,13 @@
 <%= form_with model:mensore,local:true do |f| %>
   <div class="field row">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'col-xs-12 mensore_title' %>
+    <p>タイトル</p>
+    <%= f.text_field :title, class: 'col-xs-8 mensore_title' %>
   </div>
   
 
     <div class="field row">
     <p>共有場所</p>
-    <%= f.text_area :body, class: 'col-xs-12 mensore_body'%>
+    <%= f.text_area :body, class: 'col-xs-8 mensore_body'%>
   </div>
         <div class="field" id="star">
             <%= f.label :star %>
@@ -26,6 +26,6 @@
     <%= f.attachment_field :image %>
 
   <div class="actions row">
-    <%= f.submit class: 'btn btn-primary col-xs-12'%>
+    <%= f.submit class: 'btn btn-primary col-xs-8'%>
   </div>
 <% end %>

@@ -8,7 +8,6 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    
     @mensore = Mensore.find(params[:id])
     bookmark = current_user.bookmarks.find_by(mensore_id: @mensore.id)
     bookmark.destroy
@@ -18,6 +17,7 @@ class BookmarksController < ApplicationController
     @user = User.find(params[:user_id])
     @bookmarks = @user.bookmarks
     @mensore = Mensore.new
+    
   end
     
   
