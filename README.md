@@ -30,9 +30,6 @@ https://docs.google.com/spreadsheets/d/1FVoCSjIJFCPjaHqOcml1UXifxETIAKtW4XYnguY2
 
 ## 使用素材
 - 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
-- 使用しない場合は、使用素材の項目をREADMEから削除してください。
-・Googleマップ
-## 外部サイト
 - ロゴ作成　https://www.canva.com/design/DAEmmQoAMQ0/share/preview?token=JPWCHdNqbJu8lv30KrSMtw&role=EDITOR&utm_content=DAEmmQoAMQ0&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton
 - 評価機能の画像　https://github.com/wbotelhos/raty/tree/master/lib/images
 - フリー素材写真　https://098free.com/
