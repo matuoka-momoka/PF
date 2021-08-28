@@ -17,7 +17,7 @@
 ### 主な利用シーン
 沖縄旅行に行こうと思った際の行き先選び、時間が余った際寄り道探し
 
-##ER図
+## ER図
 - https://app.diagrams.net/#G1DeVUSJfLKWREAxhG7EkDtMnMehxzkDLo
 
 ## チャレンジ要素一覧
