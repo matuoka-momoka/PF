@@ -18,7 +18,7 @@
 沖縄旅行に行こうと思った際の行き先選び、時間が余った際寄り道探し
 
 ## ER図
-- https://app.diagrams.net/#G1DeVUSJfLKWREAxhG7EkDtMnMehxzkDLo
+https://app.diagrams.net/#G1DeVUSJfLKWREAxhG7EkDtMnMehxzkDLo
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1FVoCSjIJFCPjaHqOcml1UXifxETIAKtW4XYnguY2sy8/edit#gid=0
