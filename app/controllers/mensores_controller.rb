@@ -1,19 +1,15 @@
 class MensoresController < ApplicationController
-  #before_action :authenticate_user!
-  #before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def show
     @mensore = Mensore.find(params[:id])
     @mensore_comment = MensoreComment.new
     @bookmark = @mensore.bookmarks.find_by(user_id: current_user.id)
-    #render "hoges/hige"
     @user = User.find(current_user.id)
   end
   
   def index
     @mensores = Mensore.all
     @mensore = Mensore.new
-    #@all_ranks = Mesnore.create_all_ranks
   end
 
   def create

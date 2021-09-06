@@ -1,10 +1,7 @@
 class SearchesController < ApplicationController
     def search
-     #@search = Mensore.find(params[:id])
       word = params[:search]
-      #@search_results = Mensore.where('title LIKE ? OR body LIKE ?', "%#{word}%", "%#{word}%")
       @mensore_ranks = Mensore.where('title LIKE ? OR body LIKE ?', "%#{word}%", "%#{word}%").includes(:bookmarkd_users).sort {|a,b| b.bookmarkd_users.size <=> a.bookmarkd_users.size}
-
     end
     #@datasに最終的な検索結果が入ります
 
