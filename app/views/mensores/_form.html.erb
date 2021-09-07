@@ -3,28 +3,23 @@
     <p>タイトル</p>
     <%= f.text_field :title, class: 'col-xs-8 mensore_title' %>
   </div>
-  
-
-    <div class="field row">
+  <div class="field row">
     <p>共有場所</p>
     <%= f.text_area :body, class: 'col-xs-8 mensore_body'%>
   </div>
-        <div class="field" id="star">
-            <%= f.label :star %>
-            <%= f.hidden_field :star, id: :review_star %>
-          </div>
-
-      <script>
-      $('#star').raty({
-        size     : 36,
-        starOff:  '<%= asset_path('star-off.png') %>',
-        starOn : '<%= asset_path('star-on.png') %>',
-        scoreName: 'mensore[star]' 
-      });
-      </script>
-      
+  <div class="field" id="star">
+   <%= f.label :star %>
+   <%= f.hidden_field :star, id: :review_star %>
+  </div>
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    scoreName: 'mensore[star]' 
+    });
+  </script>
     <%= f.attachment_field :image %>
-
   <div class="actions row">
     <%= f.submit class: 'btn btn-primary col-xs-8'%>
   </div>
